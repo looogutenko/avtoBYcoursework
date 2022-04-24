@@ -1,16 +1,396 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 
 <head>
-    <meta charset="utf-8" />
+
+  <meta charset="utf-8" />
+  <title>Capstone1</title>
+  <!-- Required meta tags -->
+
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+
+  <style>
+    @media (min-width: 770px) {
+
+      .ads {
+        display: grid;
+        grid-template-columns: 1fr 750px 1fr;
+        grid-row-gap: 10px;
+        grid-auto-rows: minmax(200px, auto);
+        justify-content: center;
+      }
+
+      .ad {
+        display: grid;
+        grid-column: 2/2;
+        grid-template-columns: 250px 500px;
+        border: 1px solid black;
+        width: 750px;
+      }
+
+      .car_info {
+        display: grid;
+        padding: 10px;
+        grid-template-columns: 240px 240px;
+        grid-template-rows: repeat(4, 1fr);
+      }
+
+      .car_name {
+        word-wrap: break-word;
+        grid-column: 1/3;
+        border: 1px solid black;
+      }
+
+      .car_describe {
+        word-wrap: break-word;
+        grid-row: 2/5;
+        border: 1px solid black;
+      }
+
+      .price {
+        word-wrap: break-word;
+        grid-row: 4/5;
+        justify-self: end;
+      }
+
+      .photo {
+        width: 250px;
+        height: 100%;
+      }
+
+      .nav {
+        display: grid;
+        grid-template-columns: 2fr repeat(4, 1fr);
+        border: 1px solid black;
+      }
+
+      .search form {
+        display: grid;
+        width: 750px;
+        grid-template-columns: repeat(4, 1fr);
+        border: 1px solid black;
+        margin: auto;
+        margin-top: 10px;
+        margin-bottom: 10px;
+      }
+
+      .sort {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        width: 750px;
+        margin: auto;
+      }
+
+    }
+
+    @media (min-width: 360px) and (max-width: 768px) {
+      .ads {
+        display: grid;
+        grid-template-columns: 1fr 2fr 1fr;
+        grid-row-gap: 20px;
+        grid-auto-rows: minmax(300px, auto);
+        justify-content: center;
+      }
+
+      .ad {
+        display: grid;
+        grid-column-start: 2;
+        grid-column-end: 2;
+        grid-template-columns: 1fr;
+        grid-template-rows: 200px 1fr;
+        border: 1px solid black;
+        width: 300px;
+      }
+
+      .car_info {
+        display: grid;
+        padding: 3px;
+        grid-template-columns: repeat(3, 1fr);
+        grid-template-rows: repeat(3, 1fr);
+        grid-auto-rows: auto;
+      }
+
+      .car_name {
+        word-wrap: break-word;
+        grid-column: 1/4;
+        border: 1px solid black;
+      }
+
+      .car_describe {
+        word-wrap: break-word;
+        grid-column: 1/3;
+        grid-row: 2/4;
+        border: 1px solid black;
+      }
+
+      .price {
+        word-wrap: break-word;
+        grid-row: 3/3;
+        justify-self: end;
+      }
+
+      .auto_photo {
+        height: 200px;
+      }
+
+      .photo {
+        position: absolute;
+        width: 300px;
+        height: 200px;
+      }
+
+      .nav {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        grid-template-rows: repeat(3, 1fr);
+        border: 1px solid black;
+      }
+
+      #logo {
+        grid-column: 1/4;
+      }
+
+      .add_ad {
+        grid-column: 1/4;
+      }
+
+      .search form {
+        display: grid;
+        width: 300px;
+        grid-template-rows: repeat(4, 1fr);
+        border: 1px solid black;
+        margin: auto;
+        margin-top: 10px;
+        margin-bottom: 10px;
+      }
+
+      .sort {
+        display: grid;
+        grid-template-rows: repeat(2, 1fr);
+        width: 300px;
+        margin: auto;
+      }
+
+
+    }
+
+    @media (min-width: 240px) and (max-width: 359px) {
+      * {
+        font-size: 10px;
+      }
+
+      .ads {
+        display: grid;
+        grid-template-columns: 1fr 2fr 1fr;
+        grid-row-gap: 10px;
+        grid-auto-rows: minmax(300px, auto);
+        justify-content: center;
+      }
+
+      .ad {
+        display: grid;
+        grid-column-start: 2;
+        grid-column-end: 2;
+        grid-template-columns: 1fr;
+        grid-template-rows: 150px 1fr;
+        border: 1px solid black;
+        width: 200px;
+      }
+
+      .car_info {
+        display: grid;
+        padding: 3px;
+        grid-template-columns: repeat(3, 1fr);
+        grid-template-rows: repeat(3, 1fr);
+        grid-auto-rows: auto;
+      }
+
+      .car_name {
+        word-wrap: break-word;
+        grid-column: 1/4;
+        border: 1px solid black;
+      }
+
+      .car_describe {
+        word-wrap: break-word;
+        grid-column: 1/3;
+        grid-row: 2/4;
+        border: 1px solid black;
+      }
+
+      .price {
+        word-wrap: break-word;
+        grid-row: 3/3;
+        justify-self: end;
+      }
+
+      .photo {
+        position: absolute;
+        width: 200px;
+        height: 150px;
+      }
+
+      .nav {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        grid-template-rows: repeat(3, 1fr);
+        border: 1px solid black;
+      }
+
+      #logo {
+        grid-column: 1/4;
+      }
+
+      .add_ad {
+        grid-column: 1/4;
+      }
+
+      .search form {
+        display: grid;
+        width: 200px;
+        grid-template-rows: repeat(4, 1fr);
+        border: 1px solid black;
+        margin: auto;
+        margin-top: 10px;
+        margin-bottom: 10px;
+      }
+
+      .sort {
+        display: grid;
+        grid-template-rows: repeat(2, 1fr);
+        width: 200px;
+        margin: auto;
+      }
+
+    }
+
+    html {
+      position: relative;
+      min-height: 100%;
+    }
+
+    body {
+      margin-bottom: 60px;
+    }
+
+    footer {
+      position: absolute;
+      bottom: 0;
+      width: 100%;
+      height: 60px;
+      background-color: #f5f5f5;
+    }
+
+    .ads {
+      margin-top: 10px;
+      margin-bottom: 10px;
+    }
+  </style>
+
+  <link rel="stylesheet" href="./menu.css" />
+  <link rel="stylesheet" href="./select.css"/>
+
+
+
 </head>
 
 <body>
 
-    <div id="header"></div>
-    <div id="searcher"></div>
-    <div id="ads"></div>
-    <div id="footer"></div>
+  <nav>
+    <a href="#">Главная</a>
+    <a href="#">Новости</a>
+    <a href="#">Помощь</a>
+    <div class="animation start-home"></div>
+  </nav>
+
+  <header>
+    <div class="search">
+      <form>
+        <select class="select-css">
+          <option>This is a native select element</option>
+          <option>Apples</option>
+          <option>Bananas</option>
+          <option>Grapes</option>
+          <option>Oranges</option>
+        </select>
+        <select class="select-css">
+          <option>This is a native select element</option>
+          <option>Apples</option>
+          <option>Bananas</option>
+          <option>Grapes</option>
+          <option>Oranges</option>
+        </select>
+        <select class="select-css">
+          <option>This is a native select element</option>
+          <option>Apples</option>
+          <option>Bananas</option>
+          <option>Grapes</option>
+          <option>Oranges</option>
+        </select>
+      </form>
+
+
+  </header>
+
+  <main>
+
+    <div class="sort">
+      <button class="sorting__price_min_to_max">Цена по возрастанию</button>
+      <button class="sorting__price_max_to_min">Цена по убыванию</button>
+    </div>
+
+
+    <div class="ads">
+
+      <div class="ad" id="car">
+        <div class="auto_photo">
+          <img class="photo" src="photo_car_jpg/v1.jpg" />
+        </div>
+        <div class="car_info">
+          <p class="car_name">knvdsnvkvSNDKNKSDnkkvknVNKDSnvksn</p>
+          <p class="car_describe">knvdsnvkvSNDKNKSDnkkvknVNKDSnvksn</p>
+          <p class="price">2067</p>
+        </div>
+      </div>
+
+      <div class="ad">
+        <div class="auto_photo">
+          <img class="photo" src="photo_car_jpg/ваз1.jpg" />
+        </div>
+        <div class="car_info">
+          <p class="car_name">knvdsnvkvSNDKNKSDnkkvknVNKDSnvksn</p>
+          <p class="car_describe">knvdsnvkvSNDKNKSDnkkvknVNKDSnvksn</p>
+          <p class="price">4788444</p>
+        </div>
+      </div>
+
+      <div class="ad">
+        <div class="auto_photo">
+          <img class="photo" src="photo_car_jpg/т1.jpg" />
+        </div>
+        <div class="car_info">
+          <p class="car_name">knvdsnvkvSNDKNKSDnkkvknVNKDSnvksn</p>
+          <p class="car_describe">knvdsnvkvSNDKNKSDnkkvknVNKDSnvksn</p>
+          <p class="price">30000</p>
+        </div>
+      </div>
+
+      <script type="text/javascript" src="./sort_max_to_min.js"></script>
+      <script type="text/javascript" src="./sort_min_to_max.js"></script>
+
+    </div>
+
+
+  </main>
+
+  <footer>
+    <footer class="bg-light text-center text-lg-start">
+      <div class="text-center p-3" style="background-color: rgba(0, 0, 0, 0.2);">
+        © 2022 Copyright:
+        <a class="text-dark" href="https://mdbootstrap.com/">MDBootstrap.com</a>
+      </div>
+    </footer>
+  </footer>
 
 </body>
 
