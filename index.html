@@ -24,7 +24,8 @@
         display: grid;
         grid-column: 2/2;
         grid-template-columns: 250px 500px;
-        border: 1px solid black;
+        border-radius: 10px;
+        background-color: rgb(241, 241, 241);
         width: 750px;
       }
 
@@ -38,13 +39,20 @@
       .car_name {
         word-wrap: break-word;
         grid-column: 1/3;
-        border: 1px solid black;
+        font-weight: bold;
+        font-size: 20px;
+        font-family: Roboto, "Helvetica Neue", Helvetica, Arial;
+        text-decoration: underline;
+        padding: 0;
+        margin: 0;
       }
 
       .car_describe {
         word-wrap: break-word;
         grid-row: 2/5;
-        border: 1px solid black;
+        font-family: Roboto, "Helvetica Neue", Helvetica, Arial;
+        padding: 0;
+        margin: 0;
       }
 
       .price {
@@ -56,22 +64,53 @@
       .photo {
         width: 250px;
         height: 100%;
+        border-radius: 10px 0 0 10px;
       }
 
-      .nav {
+      .up {
         display: grid;
-        grid-template-columns: 2fr repeat(4, 1fr);
-        border: 1px solid black;
+        margin: auto;
+        width: 750px;
+        grid-template-columns: repeat(5, 1fr);
+
+        margin: 27px auto 0;
+        position: relative;
+        width: 750px;
+        height: 50px;
+        background-color: rgb(74, 74, 74);
+        border-radius: 8px;
+        font-size: 0;
+      }
+
+      nav {
+        grid-column: 2/6;
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+      }
+
+      #logo {
+        grid-column: 1/2;
       }
 
       .search form {
         display: grid;
-        width: 750px;
+        width: 740px;
+        height: 30px;
         grid-template-columns: repeat(4, 1fr);
-        border: 1px solid black;
+        background-color: rgb(210, 210, 210);
+        padding: 5px;
+        border-radius: 5px;
+        
         margin: auto;
         margin-top: 10px;
         margin-bottom: 10px;
+      }
+
+      .search form select {
+        height: 30px;
+        width: 180px;
+        border-radius: 5px;
+        border: none;
       }
 
       .sort {
@@ -89,7 +128,7 @@
         grid-template-columns: 1fr 2fr 1fr;
         grid-row-gap: 20px;
         grid-auto-rows: minmax(300px, auto);
-        justify-content: center;
+        margin: auto;
       }
 
       .ad {
@@ -98,7 +137,8 @@
         grid-column-end: 2;
         grid-template-columns: 1fr;
         grid-template-rows: 200px 1fr;
-        border: 1px solid black;
+        border-radius: 10px;
+        background-color: rgb(241, 241, 241);
         width: 300px;
       }
 
@@ -113,20 +153,26 @@
       .car_name {
         word-wrap: break-word;
         grid-column: 1/4;
-        border: 1px solid black;
+        font-weight: bold;
+        font-size: 20px;
+        font-family: Roboto, "Helvetica Neue", Helvetica, Arial;
+        text-decoration: underline;
+        
       }
 
       .car_describe {
         word-wrap: break-word;
         grid-column: 1/3;
         grid-row: 2/4;
-        border: 1px solid black;
+        font-family: Roboto, "Helvetica Neue", Helvetica, Arial;
+
       }
 
       .price {
         word-wrap: break-word;
         grid-row: 3/3;
         justify-self: end;
+        font-family: Roboto, "Helvetica Neue", Helvetica, Arial;
       }
 
       .auto_photo {
@@ -137,13 +183,32 @@
         position: absolute;
         width: 300px;
         height: 200px;
+        border-radius: 10px 10px 0 0;
+      }
+      
+
+      .up {
+        display: grid;
+        margin: auto !important;
+        width: 300px !important;
+        grid-template-columns: 1fr;
+        grid-template-rows: 2fr 1fr;
+        
+
+        margin: 27px auto 0;
+        position: relative;
+        width: 300px;
+        height: 90px;
+        background-color: rgb(74, 74, 74);
+        border-radius: 8px;
+        font-size: 0;
       }
 
-      .nav {
+      nav {
+        grid-row: 2/3;
+        grid-column: 1/2;
         display: grid;
-        grid-template-columns: repeat(3, 1fr);
-        grid-template-rows: repeat(3, 1fr);
-        border: 1px solid black;
+        grid-template-columns: repeat(4, 1fr);
       }
 
       #logo {
@@ -156,12 +221,15 @@
 
       .search form {
         display: grid;
-        width: 300px;
+        width: 290px;
         grid-template-rows: repeat(4, 1fr);
-        border: 1px solid black;
+        background-color: rgb(210, 210, 210);
         margin: auto;
         margin-top: 10px;
         margin-bottom: 10px;
+        padding: 5px;
+        border-radius: 5px;
+        grid-row-gap: 3px;
       }
 
       .sort {
@@ -175,14 +243,14 @@
     }
 
     @media (min-width: 240px) and (max-width: 359px) {
-      * {
+      body {
         font-size: 10px;
       }
 
       .ads {
         display: grid;
         grid-template-columns: 1fr 2fr 1fr;
-        grid-row-gap: 10px;
+        grid-row-gap: 20px;
         grid-auto-rows: minmax(300px, auto);
         justify-content: center;
       }
@@ -192,8 +260,9 @@
         grid-column-start: 2;
         grid-column-end: 2;
         grid-template-columns: 1fr;
-        grid-template-rows: 150px 1fr;
-        border: 1px solid black;
+        grid-template-rows: 200px 1fr;
+        border-radius: 10px;
+        background-color: rgb(241, 241, 241);
         width: 200px;
       }
 
@@ -208,33 +277,64 @@
       .car_name {
         word-wrap: break-word;
         grid-column: 1/4;
-        border: 1px solid black;
+        font-weight: bold;
+        font-size: 15px !important;
+        font-family: Roboto, "Helvetica Neue", Helvetica, Arial;
+        text-decoration: underline;
+        
       }
 
       .car_describe {
         word-wrap: break-word;
         grid-column: 1/3;
         grid-row: 2/4;
-        border: 1px solid black;
+        font-family: Roboto, "Helvetica Neue", Helvetica, Arial;
+
       }
 
       .price {
         word-wrap: break-word;
         grid-row: 3/3;
         justify-self: end;
+        font-family: Roboto, "Helvetica Neue", Helvetica, Arial;
+      }
+
+      .auto_photo {
+        height: 200px;
       }
 
       .photo {
         position: absolute;
         width: 200px;
-        height: 150px;
+        height: 200px;
+        border-radius: 10px 10px 0 0;
+      }
+      
+
+      .up {
+        display: grid;
+        margin: auto !important;
+        width: 200px !important;
+        grid-template-columns: 1fr;
+        grid-template-rows: 2fr 1fr 1fr;
+        
+
+        margin: 27px auto 0;
+        position: relative;
+        width: 200px;
+        height: 120px;
+        background-color: rgb(74, 74, 74);
+        border-radius: 8px;
+        font-size: 0;
       }
 
-      .nav {
+      nav {
+        grid-row: 2/4;
+        grid-column: 1/2;
         display: grid;
         grid-template-columns: repeat(3, 1fr);
-        grid-template-rows: repeat(3, 1fr);
-        border: 1px solid black;
+        grid-template-rows: repeat(2, 1fr);
+        font-size: 7px !important;
       }
 
       #logo {
@@ -247,12 +347,15 @@
 
       .search form {
         display: grid;
-        width: 200px;
+        width: 190px;
         grid-template-rows: repeat(4, 1fr);
-        border: 1px solid black;
+        background-color: rgb(210, 210, 210);
         margin: auto;
         margin-top: 10px;
         margin-bottom: 10px;
+        padding: 5px;
+        border-radius: 5px;
+        grid-row-gap: 3px;
       }
 
       .sort {
@@ -275,59 +378,132 @@
 
     footer {
       position: absolute;
+      font-family: Roboto, "Helvetica Neue", Helvetica, Arial;
       bottom: 0;
       width: 100%;
-      height: 60px;
+      height: 30px;
       background-color: #f5f5f5;
+    }
+
+    footer div {
+      position: absolute;
+      width: 100%;
+      height: 90%;
+      background-color: black;
+      color: white;
+    }
+
+    .footer-link {
+      color: white;
     }
 
     .ads {
       margin-top: 10px;
       margin-bottom: 10px;
     }
+
+    #map {
+      margin: auto !important;
+      display: grid;
+      grid-template-columns: 1fr;
+      grid-template-rows: 1fr;
+    }
+
+    .btn {
+      background-color: rgb(39, 39, 39);
+      border: none;
+      border-radius: 5px;
+      color: white;
+    }
+
+    .btn:hover {
+      background-color: rgb(0, 0, 0);
+      transition: all .7s ease 0s;
+      border: none;
+      border-radius: 5px;
+      color: white;
+    }
+
+    .btn:active {
+      background-color: rgb(115, 0, 255);
+      transition: all .3s ease 0s;
+      border: none;
+      border-radius: 5px;
+      color: white;
+    }
+
+    .sorting__price_min_to_max, .sorting__price_max_to_min {
+      border: none;
+      color: rgb(59, 59, 59);
+      text-decoration: underline;
+    }
+
+    .sorting__price_min_to_max:hover {
+      transition: all .7s ease 0s;
+      color: blue;
+    }
+
+    .sorting__price_max_to_min:hover {
+      transition: all .7s ease 0s;
+      color: blue;
+    }
   </style>
 
   <link rel="stylesheet" href="./menu.css" />
-  <link rel="stylesheet" href="./select.css"/>
+
+
 
 
 
 </head>
 
 <body>
+  <div class="up">
+    <div id="logo"></div>
+    <nav>
+      <a style="color:rgba(210, 210, 210, 0.788)" href="#">Главная</a>
+      <a href="#">Новости</a>
+      <a href="#">Помощь</a>
+      <a href="#" id="add_ad">+ Объявление</a>
+      <div class="animation start-home"></div>
+    </nav>
+  </div>
 
-  <nav>
-    <a href="#">Главная</a>
-    <a href="#">Новости</a>
-    <a href="#">Помощь</a>
-    <div class="animation start-home"></div>
-  </nav>
 
   <header>
     <div class="search">
       <form>
-        <select class="select-css">
-          <option>This is a native select element</option>
-          <option>Apples</option>
-          <option>Bananas</option>
-          <option>Grapes</option>
-          <option>Oranges</option>
+        <select class="brand">
+          <option selected="selected" disabled="disabled">Марка</option>
+          <option id="1">Audi</option>
+          <option id="2">BMW</option>
+          <option id="3">Ford</option>
+          <option id="4">LADA</option>
+          <option id="5">Nissan</option>
+          <option id="6">Volvo</option>
+          <option id="7">Volkswagen</option>
         </select>
-        <select class="select-css">
-          <option>This is a native select element</option>
-          <option>Apples</option>
-          <option>Bananas</option>
-          <option>Grapes</option>
-          <option>Oranges</option>
+        
+        <select class="model">
+          <option selected="selected" disabled="disabled">Модель</option>
         </select>
+
+        
         <select class="select-css">
-          <option>This is a native select element</option>
-          <option>Apples</option>
-          <option>Bananas</option>
-          <option>Grapes</option>
-          <option>Oranges</option>
+          <option selected="selected" disabled="disabled">Год</option>
+          <option>1990</option>
+          <option>1995</option>
+          <option>2000</option>
+          <option>2005</option>
+          <option>2010</option>
+          <option>2015</option>
+          <option>2020</option>
+          <option>2025</option>
         </select>
+        <button class="btn">Поиск</button>
       </form>
+
+      <script type="text/javascript" src="./model.js"></script>
 
 
   </header>
@@ -347,9 +523,11 @@
           <img class="photo" src="photo_car_jpg/v1.jpg" />
         </div>
         <div class="car_info">
-          <p class="car_name">knvdsnvkvSNDKNKSDnkkvknVNKDSnvksn</p>
-          <p class="car_describe">knvdsnvkvSNDKNKSDnkkvknVNKDSnvksn</p>
-          <p class="price">2067</p>
+          <p class="car_name">
+            <a>Volvo S40</a>
+          </p>
+          <p class="car_describe">2.0, Бензин, 2020, Автоматическая, 12 630 км</p>
+          <p class="price">2067 $</p>
         </div>
       </div>
 
@@ -358,9 +536,11 @@
           <img class="photo" src="photo_car_jpg/ваз1.jpg" />
         </div>
         <div class="car_info">
-          <p class="car_name">knvdsnvkvSNDKNKSDnkkvknVNKDSnvksn</p>
-          <p class="car_describe">knvdsnvkvSNDKNKSDnkkvknVNKDSnvksn</p>
-          <p class="price">4788444</p>
+          <p class="car_name">
+            <a>ВАЗ Largus</a>
+          </p>
+          <p class="car_describe">1.6, Бензин, 2017, Механическая, 180 160 км</p>
+          <p class="price">4788444 $</p>
         </div>
       </div>
 
@@ -369,9 +549,11 @@
           <img class="photo" src="photo_car_jpg/т1.jpg" />
         </div>
         <div class="car_info">
-          <p class="car_name">knvdsnvkvSNDKNKSDnkkvknVNKDSnvksn</p>
-          <p class="car_describe">knvdsnvkvSNDKNKSDnkkvknVNKDSnvksn</p>
-          <p class="price">30000</p>
+          <p class="car_name">
+            <a>Toyota Camry</a>
+          </p>
+          <p class="car_describe">1.6, Бензин, 2020, Механическая, 70 784 км</p>
+          <p class="price">30000 $</p>
         </div>
       </div>
 
@@ -381,13 +563,15 @@
     </div>
 
 
+
+
   </main>
 
   <footer>
-    <footer class="bg-light text-center text-lg-start">
-      <div class="text-center p-3" style="background-color: rgba(0, 0, 0, 0.2);">
-        © 2022 Copyright:
-        <a class="text-dark" href="https://mdbootstrap.com/">MDBootstrap.com</a>
+    <footer class="footer">
+      <div>
+        © 2022
+        <a class="footer-link">Auto</a>
       </div>
     </footer>
   </footer>

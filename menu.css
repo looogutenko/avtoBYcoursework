@@ -1,13 +1,4 @@
-nav {
-	margin: 27px auto 0;
 
-	position: relative;
-	width: 750px;
-	height: 50px;
-	background-color: #383838;
-	border-radius: 8px;
-	font-size: 0;
-}
 nav a {
 	line-height: 50px;
 	height: 100%;
@@ -21,55 +12,194 @@ nav a {
 	text-align: center;
 	color: white;
 	cursor: pointer;
+	word-wrap: break-word;
 }
 nav .animation {
 	position: absolute;
 	height: 100%;
 	top: 0;
 	z-index: 0;
-	transition: all .5s ease 0s;
+	transition: all .7s ease 0s;
 	border-radius: 8px;
 }
-a:nth-child(1) {
-	width: 100px;
+
+@media (min-width: 770px) {
+	nav {
+		margin: 0;
+		position: absolute;
+		width: 600px;
+		height: 50px;
+		background-color: rgb(74, 74, 74);
+		border-radius: 8px;
+		font-size: 0;
+	}
+
+	nav a:nth-child(1):hover~.animation {
+		width: 150px;
+		left: 0;
+		background-color: rgb(74, 74, 74);
+	}
+
+	nav a:nth-child(2):hover~.animation {
+		width: 150px;
+		left: 150px;
+		background-color: #e74c3c !important;
+	}
+
+	nav a:nth-child(3):hover~.animation {
+		width: 150px;
+		left: 300px;
+		background-color: #3498db;
+	}
+
+	nav a:nth-child(4):hover~.animation {
+		width: 150px;
+		left: 450px;
+		background-color: #3700ff;
+	}
 }
-a:nth-child(2) {
-	width: 110px;
+
+@media (min-width: 360px) and (max-width: 768px) {
+
+	#add_ad {
+		font-size: 7px !important;
+	}
+
+	nav {
+		margin: 0;
+		position: absolute;
+		width: 300px;
+		height: 30px;
+		background-color: rgb(74, 74, 74);
+		border-radius: 8px;
+		font-size: 0;
+	}
+
+	nav a {
+		
+		font-size: 10px !important;
+		height: 30px;
+		line-height: 30px;
+	}
+	
+	/*hover*/
+	nav .start-home, a:nth-child(1):hover~.animation {
+		width: 75px;
+		left: 0;
+		background-color: rgb(74, 74, 74);
+	}
+	nav .start-about, a:nth-child(2):hover~.animation {
+		width: 75px;
+		left: 75px;
+		background-color: #e74c3c;
+	}
+	nav .start-blog, a:nth-child(3):hover~.animation {
+		width: 75px;
+		left: 150px;
+		background-color: #3498db;
+	}
+	nav .start-blog, a:nth-child(4):hover~.animation {
+		width: 75px;
+		left: 225px;
+		background-color: #3700ff;
+	}
+
+    /*focus*/
+	nav .start-home, a:nth-child(1):focus~.animation {
+		width: 75px;
+		left: 0;
+		background-color: rgb(74, 74, 74);
+	}
+	nav .start-about, a:nth-child(2):focus~.animation {
+		width: 75px;
+		left: 75px;
+		background-color: #e74c3c;
+	}
+	nav .start-blog, a:nth-child(3):focus~.animation {
+		width: 75px;
+		left: 150px;
+		background-color: #3498db;
+	}
+	nav .start-blog, a:nth-child(4):focus~.animation {
+		width: 75px;
+		left: 225px;
+		background-color: #3700ff;
+	}
+
 }
-a:nth-child(3) {
-	width: 100px;
+
+@media (min-width: 240px) and (max-width: 359px) {
+
+	#add_ad {
+		font-size: 10px !important;
+		grid-row: 2/3;
+		grid-column: 1/4;
+	}
+
+	nav {
+		margin: 0;
+		position: absolute;
+		width: 200px;
+		height: 30px;
+		background-color: rgb(74, 74, 74);
+		border-radius: 8px;
+		font-size: 0;
+	}
+
+	nav a {
+		font-size: 10px !important;
+		height: 30px;
+		line-height: 30px;
+		word-wrap: break-word;
+	}
+	
+	/*hover*/
+	nav .start-home, a:nth-child(1):hover~.animation {
+		width: 66px;
+		left: 0;
+		background-color: rgb(74, 74, 74);
+	}
+	nav .start-about, a:nth-child(2):hover~.animation {
+		width: 66px;
+		left: 66px;
+		background-color: #e74c3c;
+	}
+	nav .start-blog, a:nth-child(3):hover~.animation {
+		width: 66px;
+		left: 134px;
+		background-color: #3498db;
+	}
+    
+	nav .start-blog, a:nth-child(4):hover~.animation {
+		width: 200px;
+		top: 30px;
+		background-color: #3700ff;
+	}
+
+	/*focus*/
+	nav .start-home, a:nth-child(1):focus~.animation {
+		width: 66px;
+		left: 0;
+		background-color: rgb(74, 74, 74);
+	}
+	nav .start-about, a:nth-child(2):focus~.animation {
+		width: 66px;
+		left: 66px;
+		background-color: #e74c3c;
+	}
+	nav .start-blog, a:nth-child(3):focus~.animation {
+		width: 66px;
+		left: 134px;
+		background-color: #3498db;
+	}
+
+	nav .start-blog, a:nth-child(4):focus~.animation {
+		width: 200px;
+		top: 30px;
+		background-color: #3700ff;
+	}
 }
-a:nth-child(4) {
-	width: 160px;
-}
-a:nth-child(5) {
-	width: 120px;
-}
-nav .start-home, a:nth-child(1):hover~.animation {
-	width: 100px;
-	left: 0;
-	background-color: #1abc9c;
-}
-nav .start-about, a:nth-child(2):hover~.animation {
-	width: 110px;
-	left: 100px;
-	background-color: #e74c3c;
-}
-nav .start-blog, a:nth-child(3):hover~.animation {
-	width: 100px;
-	left: 210px;
-	background-color: #3498db;
-}
-nav .start-portefolio, a:nth-child(4):hover~.animation {
-	width: 160px;
-	left: 310px;
-	background-color: #9b59b6;
-}
-nav .start-contact, a:nth-child(5):hover~.animation {
-	width: 120px;
-	left: 470px;
-	background-color: #e67e22;
-}
+
 
 h1 {
 	text-align: center;
