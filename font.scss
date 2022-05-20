@@ -1,0 +1,9 @@
+$color: rgba(235, 235, 235, 0.788);
+
+.article:hover {
+    background-color: $color;
+    font-size: 18px - 3px;
+    transition: all .3s ease 0s;
+    opacity: 0.9;
+    border-radius: 5px;
+}

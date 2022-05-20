@@ -1,0 +1,77 @@
+$gray: rgb(230, 230, 230);
+$level2: 300px;
+$level3: 200px;
+
+@media (min-width: 360px) and (max-width: 768px) {
+    .param {
+        width: $level2 !important;
+        padding: 10px;
+        background-color: $gray;
+        border-radius: 10px;
+    }
+
+    .contact {
+        width: $level2 !important;
+        padding: 10px;
+        background-color: $gray;
+        border-radius: 10px;
+
+    }
+
+    .other {
+        width: $level2 !important;
+        padding: 10px;
+        background-color: $gray;
+        border-radius: 10px;
+        display: grid;
+        grid-template-columns: 1fr;
+        grid-template-rows: repeat(5, 1fr);
+
+    }
+
+    .description {
+        width: $level2 !important;
+        padding: 10px;
+        background-color: $gray;
+        border-radius: 10px;
+
+    }
+
+}
+
+@media (min-width: 240px) and (max-width: 359px) {
+    .param {
+        width: $level3 !important;
+        padding: 10px;
+        background-color: $gray;
+        border-radius: 10px;
+    }
+
+    .contact {
+        width: $level3 !important;
+        padding: 10px;
+        background-color: $gray;
+        border-radius: 10px;
+
+    }
+
+    .other {
+        width: $level3 !important;
+        padding: 10px;
+        background-color: $gray;
+        border-radius: 10px;
+        display: grid;
+        grid-template-columns: 1fr;
+        grid-template-rows: repeat(5, 1fr);
+
+    }
+
+    .description {
+        width: $level3 !important;
+        padding: 10px;
+        background-color: $gray;
+        border-radius: 10px;
+
+    }
+
+}

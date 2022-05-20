@@ -1,35 +1,528 @@
 <!DOCTYPE html>
-<html>
+<html lang="ru">
 
 <head>
+
     <meta charset="utf-8" />
+    <title>Capstone1</title>
+    <!-- Required meta tags -->
+
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+
+    <style>
+        @media (min-width: 770px) {
+            .up {
+                display: grid;
+                margin: auto;
+                width: 750px;
+                grid-template-columns: repeat(5, 1fr);
+
+                margin: 27px auto 0;
+                position: relative;
+                width: 750px;
+                height: 50px;
+                background-color: rgb(74, 74, 74);
+                border-radius: 8px;
+                font-size: 0;
+            }
+
+            nav {
+                grid-column: 2/6;
+                display: grid !important;
+                grid-template-columns: repeat(4, 1fr);
+            }
+
+            #logo {
+                grid-column: 1/2;
+            }
+
+            form {
+                margin: auto;
+                display: grid;
+                width: 750px;
+                grid-template-columns: repeat(2, 1fr);
+                grid-template-rows: repeat(3, 1fr);
+                justify-items: center;
+                grid-row-gap: 10px;
+                grid-column-gap: 10px;
+                margin-top: 20px;
+            }
+
+
+
+            .param {
+                display: grid;
+                grid-template-columns: 1fr;
+                grid-template-rows: repeat(5, 1fr);
+                padding: 10px;
+                background-color: rgb(230, 230, 230);
+                border-radius: 10px;
+                justify-self: end;
+            }
+
+            .contact {
+                padding: 10px;
+                background-color: rgb(230, 230, 230);
+                border-radius: 10px;
+                justify-self: start;
+            }
+
+            .other {
+                display: grid;
+                grid-template-columns: 1fr;
+                grid-template-rows: repeat(5, 1fr);
+                grid-row-gap: 5px;
+                padding: 10px;
+                background-color: rgb(230, 230, 230);
+                border-radius: 10px;
+                justify-self: start;
+
+            }
+
+            .description {
+                padding: 10px;
+                background-color: rgb(230, 230, 230);
+                border-radius: 10px;
+                justify-self: end;
+
+            }
+
+            .send {
+                grid-column: 1/3;
+                justify-self: center;
+            }
+        }
+
+        @media (min-width: 360px) and (max-width: 768px) {
+
+            .up {
+                display: grid;
+                margin: auto !important;
+                width: 300px !important;
+                grid-template-columns: 1fr;
+                grid-template-rows: 2fr 4fr;
+
+
+                margin: 27px auto 0;
+                position: relative;
+                width: 300px;
+                height: 180px;
+                background-color: rgb(74, 74, 74);
+                border-radius: 8px;
+                font-size: 0;
+            }
+
+            nav {
+                grid-row: 2/3;
+                grid-column: 1/2;
+                display: grid !important;
+                grid-template-columns: 1fr;
+                grid-template-rows: repeat(4, 1fr);
+            }
+
+            #logo {
+                grid-column: 1/4;
+            }
+
+            form {
+                margin: auto;
+                display: grid;
+                grid-template-columns: 1fr;
+                grid-template-rows: repeat(5, 1fr);
+                justify-items: center;
+                grid-row-gap: 10px;
+                margin-top: 20px;
+            }
+
+            .send {
+                padding: 10px;
+                background-color: rgb(230, 230, 230);
+                border-radius: 10px;
+            }
+
+            input {
+                width: 280px;
+            }
+
+        }
+
+        @media (min-width: 240px) and (max-width: 359px) {
+
+            body {
+                font-size: 10px;
+            }
+
+            .up {
+                display: grid;
+                margin: auto !important;
+                width: 200px !important;
+                grid-template-columns: 1fr;
+                grid-template-rows: 2fr 4fr;
+
+
+                margin: 27px auto 0;
+                position: relative;
+                width: 200px;
+                height: 180px;
+                background-color: rgb(74, 74, 74);
+                border-radius: 8px;
+                font-size: 0;
+            }
+
+            nav {
+                grid-row: 2/3;
+                grid-column: 1/2;
+                display: grid !important;
+                grid-template-columns: 1fr;
+                grid-template-rows: repeat(4, 1fr);
+            }
+
+            #logo {
+                grid-column: 1/4;
+            }
+
+            form {
+                margin: auto;
+                display: grid;
+                grid-template-columns: 1fr;
+                grid-template-rows: repeat(5, 1fr);
+                justify-items: center;
+                grid-row-gap: 10px;
+                margin-top: 20px;
+            }
+
+            .send {
+                padding: 10px;
+                background-color: rgb(230, 230, 230);
+                border-radius: 10px;
+            }
+
+        }
+
+        html {
+            position: relative;
+            min-height: 100%;
+        }
+
+        body {
+            margin-bottom: 60px;
+        }
+
+        form {
+            color: rgb(86, 86, 86);
+            font-family: Roboto, "Helvetica Neue", Helvetica, Arial;
+            font-size: 12px;
+        }
+
+        textarea {
+            width: 170px;
+            height: 200px;
+        }
+
+        select {
+            color: rgb(56, 56, 56);
+            height: 30px;
+        }
+
+        .send {
+            background-color: rgb(69, 69, 69);
+            border: none;
+            border-radius: 5px;
+            color: white;
+            height: 30px;
+            align-self: start;
+
+        }
+
+        .send:hover {
+            background-color: black;
+        }
+
+        .send:active {
+            background-color: rgb(115, 0, 255);
+            transition: all .3s ease 0s;
+            border: none;
+            border-radius: 5px;
+            color: white;
+        }
+
+        #logo {
+            display: grid;
+            grid-template-columns: 1fr repeat(2, 1fr);
+            padding: 10px !important;
+            grid-column-gap: 10px;
+        }
+
+        .logo {
+            grid-column: 1/2;
+            width: 40px;
+            height: auto;
+            justify-self: end;
+        }
+
+        .logo_text {
+            grid-column: 2/4;
+            width: auto;
+            height: 30px;
+            justify-self: start;
+            align-self: center;
+        }
+    </style>
+
+    <link rel="stylesheet" href="./menu.css" />
+    <link rel="stylesheet" href="./arrow.css" />
+    <link rel="stylesheet" href="./form.css" />
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+
+
 </head>
 
 <body>
+    <header>
+        <div class="up">
+            <div id="logo">
+                <object type="image/svg+xml" data="./images/Фигура 4_20220511_14253.svg" class="logo">
+                    Your browser does not support SVG
+                </object>
+                <object type="image/svg+xml" data="./images/Фигура 6_20220511_155252.svg" class="logo_text">
+                    Your browser does not support SVG
+                </object>
+            </div>
+            <nav>
+                <a style="color:rgba(210, 210, 210, 0.788)" href="./index.html">Главная</a>
+                <a href="./news.html">Новости</a>
+                <a href="./help.html">Помощь</a>
+                <a href="./ad_add.html" id="add_ad">+ Объявление</a>
+                <div class="animation start-home"></div>
+            </nav>
+        </div>
+        <a href="#" title="Вернуться к началу" class="topbutton">
+            <div class="arrow"></div>
+        </a>
+    </header>
 
-    <div id="header"></div>
-    <div id="searcher"></div>
-    <div id="ads"></div>
-    <div><iframe
-            id="map"
-            src="https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d75219.11575161752!2d27.544780799999998!3d53.90336!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e0!3m2!1sru!2sby!4v1650570727649!5m2!1sru!2sby"
-            width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy"
-            referrerpolicy="no-referrer-when-downgrade"></iframe></div>
-    <div id="footer"></div>
-    <script type="text/javascript">
-        function initMap() {
-            var coordinates = { lat: 47.212325, lng: 38.933663 },
+    <main>
+        <form>
 
-                map = new google.maps.Map(document.getElementById('map'), {
-                    center: coordinates
-                }),
+            <div class="param">
+                <div>
+                    <div class="text">Пробег</div>
+                    <input type="text"></input>
+                </div>
+                <div>
+                    <div class="text">Объём двигателя</div>
+                    <input type="text"></input>
+                </div>
+                <div>
+                    <div class="text">Коробка передач</div>
+                    <input type="text"></input>
+                </div>
+                <div>
+                    <div class="text">Год</div>
+                    <input type="text"></input>
+                </div>
+                <div>
+                    <div class="text">Топливо</div>
+                    <input type="text"></input>
+                </div>
+            </div>
 
-                marker = new google.maps.Marker({
-                    position: coordinates,
-                    map: map
-                });
-        }
-    </script>
+
+            <div class="contact">
+                <div>
+                    <div class="text">Номер телефона</div>
+                    <input type="text"></input>
+                </div>
+                <div>
+                    <div class="text">Email</div>
+                    <input type="text"></input>
+                </div>
+                <div>
+                    <div class="text">Имя</div>
+                    <input type="text"></input>
+                </div>
+                <div>
+                    <div class="text">Фамилия</div>
+                    <input type="text"></input>
+                </div>
+            </div>
+
+
+            <div class="description">
+                <div>
+                    <div class="text">Описание</div>
+                    <textarea></textarea>
+                </div>
+            </div>
+
+
+            <div class="other">
+                <select class="brand">
+                    <option selected="selected" disabled="disabled">Марка</option>
+                    <option id="1">Audi</option>
+                    <option id="2">BMW</option>
+                    <option id="3">Ford</option>
+                    <option id="4">LADA</option>
+                    <option id="5">Nissan</option>
+                    <option id="6">Volvo</option>
+                    <option id="7">Volkswagen</option>
+                </select>
+
+                <select class="model">
+                    <option selected="selected" disabled="disabled">Модель</option>
+                </select>
+
+
+                <select class="select-css">
+                    <option selected="selected" disabled="disabled">Год</option>
+                    <option>1990</option>
+                    <option>1995</option>
+                    <option>2000</option>
+                    <option>2005</option>
+                    <option>2010</option>
+                    <option>2015</option>
+                    <option>2020</option>
+                    <option>2025</option>
+                </select>
+
+                <script type="text/javascript" src="./model.js"></script>
+                <div>
+                    <div class="text">Фамилия</div>
+                    <input type="text"></input>
+                </div>
+
+            </div>
+
+
+            <button class="send">Отравить</button>
+
+
+        </form>
+    </main>
+
+    <footer class="text-center text-lg-start bg-light text-muted">
+        <!-- Section: Social media -->
+        <section class="d-flex justify-content-center justify-content-lg-between p-4 border-bottom">
+          <!-- Left -->
+          <div class="me-5 d-none d-lg-block">
+            <span>Свяжитесь с нами в социальных сетях</span>
+          </div>
+          <!-- Left -->
+    
+          <!-- Right -->
+          <div>
+            <a href="" class="me-4 text-reset">
+              <i class="fab fa-facebook-f"></i>
+            </a>
+            <a href="" class="me-4 text-reset">
+              <i class="fab fa-twitter"></i>
+            </a>
+            <a href="" class="me-4 text-reset">
+              <i class="fab fa-google"></i>
+            </a>
+            <a href="" class="me-4 text-reset">
+              <i class="fab fa-instagram"></i>
+            </a>
+            <a href="" class="me-4 text-reset">
+              <i class="fab fa-linkedin"></i>
+            </a>
+            <a href="" class="me-4 text-reset">
+              <i class="fab fa-github"></i>
+            </a>
+          </div>
+          <!-- Right -->
+        </section>
+        <!-- Section: Social media -->
+    
+        <!-- Section: Links  -->
+        <section class="">
+          <div class="container text-center text-md-start mt-5">
+            <!-- Grid row -->
+            <div class="row mt-3">
+              <!-- Grid column -->
+              <div class="col-md-3 col-lg-4 col-xl-3 mx-auto mb-4">
+                <!-- Content -->
+                <h6 class="text-uppercase fw-bold mb-4">
+                  <i class="fas fa-gem me-3"></i>Avto.by
+                </h6>
+                <p>
+                  Наша цель — помочь пользователям в продаже, покупке и обслуживании автомобиля, предоставив для этого всю
+                  необходимую информацию и сервисы.
+                </p>
+              </div>
+              <!-- Grid column -->
+    
+              <!-- Grid column -->
+              <div class="col-md-2 col-lg-2 col-xl-2 mx-auto mb-4">
+                <!-- Links -->
+                <h6 class="text-uppercase fw-bold mb-4">
+                  Сервисы
+                </h6>
+                <p>
+                  <a href="#!" class="text-reset">Оценка стоимости</a>
+                </p>
+                <p>
+                  <a href="#!" class="text-reset">Финансы</a>
+                </p>
+                <p>
+                  <a href="#!" class="text-reset">Знания</a>
+                </p>
+                <p>
+                  <a href="#!" class="text-reset">Каталог компаний</a>
+                </p>
+              </div>
+              <!-- Grid column -->
+    
+              <!-- Grid column -->
+              <div class="col-md-3 col-lg-2 col-xl-2 mx-auto mb-4">
+                <!-- Links -->
+                <h6 class="text-uppercase fw-bold mb-4">
+                  Социальные сети
+                </h6>
+                <p>
+                  <a href="#!" class="text-reset">Youtube</a>
+                </p>
+                <p>
+                  <a href="#!" class="text-reset">Instagram</a>
+                </p>
+                <p>
+                  <a href="#!" class="text-reset">Telegram</a>
+                </p>
+                <p>
+                  <a href="#!" class="text-reset">Facebook</a>
+                </p>
+              </div>
+              <!-- Grid column -->
+    
+              <!-- Grid column -->
+              <div class="col-md-4 col-lg-3 col-xl-3 mx-auto mb-md-0 mb-4">
+                <!-- Links -->
+                <h6 class="text-uppercase fw-bold mb-4">
+                  Contact
+                </h6>
+                <p><i class="fas fa-home me-3"></i> Minsk, NY 10012, BY</p>
+                <p>
+                  <i class="fas fa-envelope me-3"></i>
+                  info@example.com
+                </p>
+                <p><i class="fas fa-phone me-3"></i> + 375 234 567 88</p>
+                <p><i class="fas fa-print me-3"></i> + 375 234 567 89</p>
+              </div>
+              <!-- Grid column -->
+            </div>
+            <!-- Grid row -->
+          </div>
+        </section>
+        <!-- Section: Links  -->
+    
+        <!-- Copyright -->
+        <div class="text-center p-4" style="background-color: rgba(0, 0, 0, 0.05);">
+          © 2021 Copyright:
+          <a class="text-reset fw-bold" href="https://mdbootstrap.com/">Avto.by</a>
+        </div>
+        <!-- Copyright -->
+      </footer>
 
 </body>
 

@@ -1,0 +1,34 @@
+<?xml version="1.0"?>
+<Adds OrderDate="2021-05-20">
+
+    <Car PartNumber="1">
+      <Brand>Volvo</Brand>
+      <Model>S40</Model>
+      <Year>2020</Year>
+      <Amount>2.0</Amount>
+      <Way>12 630</Way>
+      <Motor>Бензин</Motor>
+      <Price>5000</Price>
+    </Car>
+
+    <Car PartNumber="2">
+      <Brand>ВАЗ</Brand>
+      <Model>Largus</Model>
+      <Year>2017</Year>
+      <Amount>1.6</Amount>
+      <Way>180 160</Way>
+      <Motor>Бензин</Motor>
+      <Price>5000</Price>
+    </Car>
+
+    <Car PartNumber="3">
+      <Brand>Toyota</Brand>
+      <Model>Camry</Model>
+      <Year>2020</Year>
+      <Amount>1.6</Amount>
+      <Way>70 784</Way>
+      <Motor>Бензин</Motor>
+      <Price>5000</Price>
+    </Car>
+
+</Adds>

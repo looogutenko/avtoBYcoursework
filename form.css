@@ -1,0 +1,56 @@
+@media (min-width: 360px) and (max-width: 768px) {
+    .param {
+      width: 300px !important;
+      padding: 10px;
+      background-color: #e6e6e6;
+      border-radius: 10px; }
+  
+    .contact {
+      width: 300px !important;
+      padding: 10px;
+      background-color: #e6e6e6;
+      border-radius: 10px; }
+  
+    .other {
+      width: 300px !important;
+      padding: 10px;
+      background-color: #e6e6e6;
+      border-radius: 10px;
+      display: grid;
+      grid-template-columns: 1fr;
+      grid-template-rows: repeat(5, 1fr); }
+  
+    .description {
+      width: 300px !important;
+      padding: 10px;
+      background-color: #e6e6e6;
+      border-radius: 10px; } }
+  @media (min-width: 240px) and (max-width: 359px) {
+    .param {
+      width: 200px !important;
+      padding: 10px;
+      background-color: #e6e6e6;
+      border-radius: 10px; }
+  
+    .contact {
+      width: 200px !important;
+      padding: 10px;
+      background-color: #e6e6e6;
+      border-radius: 10px; }
+  
+    .other {
+      width: 200px !important;
+      padding: 10px;
+      background-color: #e6e6e6;
+      border-radius: 10px;
+      display: grid;
+      grid-template-columns: 1fr;
+      grid-template-rows: repeat(5, 1fr); }
+  
+    .description {
+      width: 200px !important;
+      padding: 10px;
+      background-color: #e6e6e6;
+      border-radius: 10px; } }
+  
+  /*# sourceMappingURL=form.css.map */

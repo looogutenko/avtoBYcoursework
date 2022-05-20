@@ -1,16 +1,517 @@
 <!DOCTYPE html>
-<html>
+<html lang="ru">
 
 <head>
-    <meta charset="utf-8" />
+
+  <meta charset="utf-8" />
+  <title>Capstone1</title>
+  <!-- Required meta tags -->
+
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+
+  <style>
+    body {
+      font-family: Roboto, "Helvetica Neue", Helvetica, Arial;
+    }
+
+    @media (min-width: 770px) {
+
+      .news {
+        display: grid;
+        grid-template-columns: 1fr;
+        grid-template-rows: 2fr 3fr;
+        width: 750px;
+        margin: auto;
+        margin-top: 10px;
+      }
+
+      .star {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        grid-template-rows: 350px;
+      }
+
+      .starstar {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        grid-template-rows: 1fr;
+      }
+
+      .star img {
+        width: 230px;
+        height: 180px;
+        margin-top: 10px;
+        margin-right: 10px;
+        margin-left: 10px;
+        border-radius: 8px;
+      }
+
+      .starstar img {
+        width: 355px;
+        height: 277px;
+        margin-top: 10px;
+        margin-right: 10px;
+        margin-left: 10px;
+        border-radius: 8px;
+
+      }
+
+      .article p {
+        margin: 10px;
+      }
+
+      .up {
+        display: grid;
+        margin: auto;
+        width: 750px;
+        grid-template-columns: repeat(5, 1fr);
+
+        margin: 27px auto 0;
+        position: relative;
+        width: 750px;
+        height: 50px;
+        background-color: rgb(74, 74, 74);
+        border-radius: 8px;
+        font-size: 0;
+      }
+
+      nav {
+        grid-column: 2/6;
+        display: grid !important;
+        grid-template-columns: repeat(4, 1fr);
+      }
+
+      #logo {
+        grid-column: 1/2;
+      }
+
+    }
+
+    @media (min-width: 360px) and (max-width: 768px) {
+
+      .news {
+        display: grid;
+        grid-template-columns: 300px;
+        grid-template-rows: 3fr 2fr;
+        width: 300px;
+        margin: auto;
+        margin-top: 10px;
+      }
+
+      .star {
+        display: grid;
+        grid-template-rows: repeat(3, 350px);
+      }
+
+      .starstar {
+        display: grid;
+        grid-template-rows: repeat(2, 350px);
+      }
+
+      .star img {
+        width: 280px;
+        height: 210px;
+        margin-top: 10px;
+        margin-right: 10px;
+        margin-left: 10px;
+        border-radius: 8px;
+      }
+
+      .starstar img {
+        width: 280px;
+        height: 210px;
+        margin-top: 10px;
+        margin-right: 10px;
+        margin-left: 10px;
+        border-radius: 8px;
+
+      }
+
+      .article p {
+        margin: 10px;
+      }
+
+      .up {
+        display: grid;
+        margin: auto !important;
+        width: 300px !important;
+        grid-template-columns: 1fr;
+        grid-template-rows: 2fr 4fr;
+
+
+        margin: 27px auto 0;
+        position: relative;
+        width: 300px;
+        height: 180px;
+        background-color: rgb(74, 74, 74);
+        border-radius: 8px;
+        font-size: 0;
+      }
+
+      nav {
+        grid-row: 2/3;
+        grid-column: 1/2;
+        display: grid !important;
+        grid-template-columns: 1fr;
+        grid-template-rows: repeat(4, 1fr);
+      }
+
+      #logo {
+        grid-column: 1/4;
+      }
+
+    }
+
+    @media (min-width: 240px) and (max-width: 359px) {
+
+      .news {
+        display: grid;
+        grid-template-columns: 200px;
+        grid-template-rows: 3fr 2fr;
+        width: 200px;
+        margin: auto;
+        margin-top: 10px;
+      }
+
+      .star {
+        display: grid;
+        grid-template-rows: repeat(3, 350px);
+      }
+
+      .starstar {
+        display: grid;
+        grid-template-rows: repeat(2, 350px);
+      }
+
+      .star img {
+        width: 180px;
+        height: 120px;
+        margin-top: 10px;
+        margin-right: 10px;
+        margin-left: 10px;
+        border-radius: 8px;
+      }
+
+      .starstar img {
+        width: 180px;
+        height: 120px;
+        margin-top: 10px;
+        margin-right: 10px;
+        margin-left: 10px;
+        border-radius: 8px;
+
+      }
+
+      .article p {
+        margin: 10px;
+      }
+
+      .up {
+        display: grid;
+        margin: auto !important;
+        width: 200px !important;
+        grid-template-columns: 1fr;
+        grid-template-rows: 2fr 4fr;
+
+
+        margin: 27px auto 0;
+        position: relative;
+        width: 200px;
+        height: 180px;
+        background-color: rgb(74, 74, 74);
+        border-radius: 8px;
+        font-size: 0;
+      }
+
+      nav {
+        grid-row: 2/3;
+        grid-column: 1/2;
+        display: grid !important;
+        grid-template-columns: 1fr;
+        grid-template-rows: repeat(4, 1fr);
+      }
+
+      #logo {
+        grid-column: 1/4;
+      }
+
+    }
+
+    html {
+      position: relative;
+      min-height: 100%;
+    }
+
+    body {
+      margin-bottom: 60px;
+    }
+
+    #logo {
+      display: grid;
+      grid-template-columns: 1fr repeat(2, 1fr);
+      padding: 10px !important;
+      grid-column-gap: 10px;
+    }
+
+    .logo {
+      grid-column: 1/2;
+      width: 40px;
+      height: auto;
+      justify-self: end;
+    }
+
+    .logo_text {
+      grid-column: 2/4;
+      width: auto;
+      height: 30px;
+      justify-self: start;
+      align-self: center;
+
+    }
+
+
+    .eye {
+      height: 15px;
+    }
+
+    .dop_info p {
+      display: inline-block;
+      font-size: 15px;
+    }
+
+    .dop_info {
+      vertical-align: bottom;
+    }
+
+    .date {
+      color: rgba(0, 0, 255, 0.776);
+    }
+
+    .play {
+      color: rgba(0, 0, 0, 0.758);
+    }
+  </style>
+
+  <link rel="stylesheet" href="./font.css" />
+  <link rel="stylesheet" href="./menu.css" />
+  <link rel="stylesheet" href="./arrow.css" />
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+
 </head>
 
 <body>
+  <header>
+    <div class="up">
+      <div id="logo">
+        <object type="image/svg+xml" data="./images/Фигура 4_20220511_14253.svg" class="logo">
+          Your browser does not support SVG
+        </object>
+        <object type="image/svg+xml" data="./images/Фигура 6_20220511_155252.svg" class="logo_text">
+          Your browser does not support SVG
+        </object>
+      </div>
+      <nav>
+        <a style="color:rgba(210, 210, 210, 0.788)" href="./index.html">Главная</a>
+        <a href="./news.html">Новости</a>
+        <a href="./help.html">Помощь</a>
+        <a href="./ad_add.html" id="add_ad">+ Объявление</a>
+        <div class="animation start-home"></div>
+      </nav>
+    </div>
+    <a href="#" title="Вернуться к началу" class="topbutton">
+      <div class="arrow"></div>
+    </a>
+  </header>
 
-    <div id="header"></div>
-    <div id="searcher"></div>
-    <div id="ads"></div>
-    <div id="footer"></div>
+  <main>
+    <div class="news">
+
+      <div class="star">
+        <div class="article">
+          <img src="./images/news1.jpg" />
+          <p>"Можно в кредит и в зачёт!". Сеть автосалонов "ВЕРНЫЕ АВТО.</p>
+          <div class="dop_info">
+            <p class="date">4 дня назад</p>
+            <object type="image/svg+xml" data="./images/eye.svg" class="eye">
+            </object>
+            <p class="play">11133</p>
+          </div>
+        </div>
+        <div class="article">
+          <img src="./images/news2.jpg" />
+          <p>"Из Парижа - в Несвиж!". В Беларуси пройдёт необычное ралли.</p>
+          <div class="dop_info">
+            <p class="date">4 дня назад</p>
+            <object type="image/svg+xml" data="./images/eye.svg" class="eye">
+
+            </object>
+            <p class="play">11133</p>
+          </div>
+        </div>
+        <div class="article">
+          <img src="./images/news3.jpg" />
+          <p>"Меняй масло и свечи". Белорус о владении 10-летним Mitsubishi Pajero.</p>
+          <div class="dop_info">
+            <p class="date">4 дня назад</p>
+            <object type="image/svg+xml" data="./images/eye.svg" class="eye">
+
+            </object>
+            <p class="play">11133</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="starstar">
+        <div class="article">
+          <img src="./images/news4.jpg" />
+          <p>BYD Han: "В Китае дают пожизненную гарантию на АКБ"</p>
+          <div class="dop_info">
+            <p class="date">4 дня назад</p>
+            <object type="image/svg+xml" data="./images/eye.svg" class="eye">
+
+            </object>
+            <p class="play">11133</p>
+          </div>
+        </div>
+        <div class="article">
+          <img src="./images/news5.jpg" />
+          <p>"Кому дорого - купите новый Minsk". Поторговались с владельцами советских Ижей, "Днепров" и "Яв".</p>
+          <div class="dop_info">
+            <p class="date">4 дня назад</p>
+            <object type="image/svg+xml" data="./images/eye.svg" class="eye">
+
+            </object>
+            <p class="play">11133</p>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </main>
+
+  <footer class="text-center text-lg-start bg-light text-muted">
+    <!-- Section: Social media -->
+    <section class="d-flex justify-content-center justify-content-lg-between p-4 border-bottom">
+      <!-- Left -->
+      <div class="me-5 d-none d-lg-block">
+        <span>Свяжитесь с нами в социальных сетях</span>
+      </div>
+      <!-- Left -->
+
+      <!-- Right -->
+      <div>
+        <a href="" class="me-4 text-reset">
+          <i class="fab fa-facebook-f"></i>
+        </a>
+        <a href="" class="me-4 text-reset">
+          <i class="fab fa-twitter"></i>
+        </a>
+        <a href="" class="me-4 text-reset">
+          <i class="fab fa-google"></i>
+        </a>
+        <a href="" class="me-4 text-reset">
+          <i class="fab fa-instagram"></i>
+        </a>
+        <a href="" class="me-4 text-reset">
+          <i class="fab fa-linkedin"></i>
+        </a>
+        <a href="" class="me-4 text-reset">
+          <i class="fab fa-github"></i>
+        </a>
+      </div>
+      <!-- Right -->
+    </section>
+    <!-- Section: Social media -->
+
+    <!-- Section: Links  -->
+    <section class="">
+      <div class="container text-center text-md-start mt-5">
+        <!-- Grid row -->
+        <div class="row mt-3">
+          <!-- Grid column -->
+          <div class="col-md-3 col-lg-4 col-xl-3 mx-auto mb-4">
+            <!-- Content -->
+            <h6 class="text-uppercase fw-bold mb-4">
+              <i class="fas fa-gem me-3"></i>Avto.by
+            </h6>
+            <p>
+              Наша цель — помочь пользователям в продаже, покупке и обслуживании автомобиля, предоставив для этого всю
+              необходимую информацию и сервисы.
+            </p>
+          </div>
+          <!-- Grid column -->
+
+          <!-- Grid column -->
+          <div class="col-md-2 col-lg-2 col-xl-2 mx-auto mb-4">
+            <!-- Links -->
+            <h6 class="text-uppercase fw-bold mb-4">
+              Сервисы
+            </h6>
+            <p>
+              <a href="#!" class="text-reset">Оценка стоимости</a>
+            </p>
+            <p>
+              <a href="#!" class="text-reset">Финансы</a>
+            </p>
+            <p>
+              <a href="#!" class="text-reset">Знания</a>
+            </p>
+            <p>
+              <a href="#!" class="text-reset">Каталог компаний</a>
+            </p>
+          </div>
+          <!-- Grid column -->
+
+          <!-- Grid column -->
+          <div class="col-md-3 col-lg-2 col-xl-2 mx-auto mb-4">
+            <!-- Links -->
+            <h6 class="text-uppercase fw-bold mb-4">
+              Социальные сети
+            </h6>
+            <p>
+              <a href="#!" class="text-reset">Youtube</a>
+            </p>
+            <p>
+              <a href="#!" class="text-reset">Instagram</a>
+            </p>
+            <p>
+              <a href="#!" class="text-reset">Telegram</a>
+            </p>
+            <p>
+              <a href="#!" class="text-reset">Facebook</a>
+            </p>
+          </div>
+          <!-- Grid column -->
+
+          <!-- Grid column -->
+          <div class="col-md-4 col-lg-3 col-xl-3 mx-auto mb-md-0 mb-4">
+            <!-- Links -->
+            <h6 class="text-uppercase fw-bold mb-4">
+              Contact
+            </h6>
+            <p><i class="fas fa-home me-3"></i> Minsk, NY 10012, BY</p>
+            <p>
+              <i class="fas fa-envelope me-3"></i>
+              info@example.com
+            </p>
+            <p><i class="fas fa-phone me-3"></i> + 375 234 567 88</p>
+            <p><i class="fas fa-print me-3"></i> + 375 234 567 89</p>
+          </div>
+          <!-- Grid column -->
+        </div>
+        <!-- Grid row -->
+      </div>
+    </section>
+    <!-- Section: Links  -->
+
+    <!-- Copyright -->
+    <div class="text-center p-4" style="background-color: rgba(0, 0, 0, 0.05);">
+      © 2021 Copyright:
+      <a class="text-reset fw-bold" href="https://mdbootstrap.com/">Avto.by</a>
+    </div>
+    <!-- Copyright -->
+  </footer>
 
 </body>
 

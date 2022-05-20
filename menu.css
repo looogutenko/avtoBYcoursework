@@ -1,20 +1,21 @@
-
 nav a {
 	line-height: 50px;
 	height: 100%;
 	font-size: 15px;
-    font-family: Roboto, "Helvetica Neue", Helvetica, Arial;
+	font-family: Roboto, "Helvetica Neue", Helvetica, Arial;
 	display: inline-block;
 	position: relative;
 	z-index: 1;
 	text-decoration: none;
 	text-transform: uppercase;
 	text-align: center;
-	color: white;
+	color: white !important;
 	cursor: pointer;
 	word-wrap: break-word;
 }
+
 nav .animation {
+	display: none;
 	position: absolute;
 	height: 100%;
 	top: 0;
@@ -35,34 +36,38 @@ nav .animation {
 	}
 
 	nav a:nth-child(1):hover~.animation {
+		display: block;
 		width: 150px;
 		left: 0;
-		background-color: rgb(74, 74, 74);
+		background-color: rgb(165, 0, 202);
 	}
 
 	nav a:nth-child(2):hover~.animation {
+		display: block;
 		width: 150px;
 		left: 150px;
-		background-color: #e74c3c !important;
+		background-color: #9000ff !important;
 	}
 
 	nav a:nth-child(3):hover~.animation {
+		display: block;
 		width: 150px;
 		left: 300px;
-		background-color: #3498db;
+		background-color: #1100ff;
 	}
 
 	nav a:nth-child(4):hover~.animation {
+		display: block;
 		width: 150px;
 		left: 450px;
-		background-color: #3700ff;
+		background-color: #006eff;
 	}
 }
 
 @media (min-width: 360px) and (max-width: 768px) {
 
-	#add_ad {
-		font-size: 7px !important;
+	nav .animation {
+		display: none;
 	}
 
 	nav {
@@ -70,59 +75,81 @@ nav .animation {
 		position: absolute;
 		width: 300px;
 		height: 30px;
-		background-color: rgb(74, 74, 74);
+		background-color: rgb(74, 74, 74) !important;
 		border-radius: 8px;
 		font-size: 0;
 	}
 
 	nav a {
-		
+
 		font-size: 10px !important;
 		height: 30px;
 		line-height: 30px;
 	}
-	
+
 	/*hover*/
-	nav .start-home, a:nth-child(1):hover~.animation {
-		width: 75px;
-		left: 0;
+	nav .start-home,
+	a:nth-child(1):hover~.animation {
+		display: block;
+		width: 300px;
+		top: 0;
 		background-color: rgb(74, 74, 74);
 	}
-	nav .start-about, a:nth-child(2):hover~.animation {
-		width: 75px;
-		left: 75px;
+
+	nav .start-about,
+	a:nth-child(2):hover~.animation {
+		display: block;
+		width: 300px;
+		top: 30px;
 		background-color: #e74c3c;
 	}
-	nav .start-blog, a:nth-child(3):hover~.animation {
-		width: 75px;
-		left: 150px;
+
+	nav .start-blog,
+	a:nth-child(3):hover~.animation {
+		display: block;
+		width: 300px;
+		top: 60px;
 		background-color: #3498db;
 	}
-	nav .start-blog, a:nth-child(4):hover~.animation {
-		width: 75px;
-		left: 225px;
+
+	nav .start-blog,
+	a:nth-child(4):hover~.animation {
+		display: block;
+		width: 300px;
+		top: 90px;
 		background-color: #3700ff;
 	}
 
-    /*focus*/
-	nav .start-home, a:nth-child(1):focus~.animation {
-		width: 75px;
-		left: 0;
+	/*focus*/
+	nav .start-home,
+	a:nth-child(1):focus~.animation {
+		display: block;
+		width: 300px;
+		top: 0;
 		background-color: rgb(74, 74, 74);
 	}
-	nav .start-about, a:nth-child(2):focus~.animation {
-		width: 75px;
-		left: 75px;
+
+	nav .start-about,
+	a:nth-child(2):focus~.animation {
+		display: block;
+		width: 300px;
+		top: 30px;
 		background-color: #e74c3c;
 	}
-	nav .start-blog, a:nth-child(3):focus~.animation {
-		width: 75px;
-		left: 150px;
+
+	nav .start-blog,
+	a:nth-child(3):focus~.animation {
+		display: block;
+		width: 300px;
+		top: 60px;
 		background-color: #3498db;
 	}
-	nav .start-blog, a:nth-child(4):focus~.animation {
-		width: 75px;
-		left: 225px;
+
+	nav .start-blog,
+	a:nth-child(4):focus~.animation {
+		display: block;
+		width: 300px;
+		top: 90px;
 		background-color: #3700ff;
 	}
 
@@ -130,10 +157,8 @@ nav .animation {
 
 @media (min-width: 240px) and (max-width: 359px) {
 
-	#add_ad {
-		font-size: 10px !important;
-		grid-row: 2/3;
-		grid-column: 1/4;
+	nav .animation {
+		display: none;
 	}
 
 	nav {
@@ -141,61 +166,81 @@ nav .animation {
 		position: absolute;
 		width: 200px;
 		height: 30px;
-		background-color: rgb(74, 74, 74);
+		background-color: rgb(74, 74, 74)  !important;
 		border-radius: 8px;
 		font-size: 0;
 	}
 
-	nav a {
+	nav a{
 		font-size: 10px !important;
 		height: 30px;
 		line-height: 30px;
 		word-wrap: break-word;
 	}
-	
+
 	/*hover*/
-	nav .start-home, a:nth-child(1):hover~.animation {
-		width: 66px;
-		left: 0;
+	nav .start-home,
+	a:nth-child(1):hover~.animation {
+		display: block;
+		width: 200px;
+		top: 0;
 		background-color: rgb(74, 74, 74);
 	}
-	nav .start-about, a:nth-child(2):hover~.animation {
-		width: 66px;
-		left: 66px;
-		background-color: #e74c3c;
-	}
-	nav .start-blog, a:nth-child(3):hover~.animation {
-		width: 66px;
-		left: 134px;
-		background-color: #3498db;
-	}
-    
-	nav .start-blog, a:nth-child(4):hover~.animation {
+
+	nav .start-about,
+	a:nth-child(2):hover~.animation {
+		display: block;
 		width: 200px;
 		top: 30px;
+		background-color: #e74c3c;
+	}
+
+	nav .start-blog,
+	a:nth-child(3):hover~.animation {
+		display: block;
+		width: 200px;
+		top: 60px;
+		background-color: #3498db;
+	}
+
+	nav .start-blog,
+	a:nth-child(4):hover~.animation {
+		display: block;
+		width: 200px;
+		top: 90px;
 		background-color: #3700ff;
 	}
 
 	/*focus*/
-	nav .start-home, a:nth-child(1):focus~.animation {
-		width: 66px;
-		left: 0;
+	nav .start-home,
+	a:nth-child(1):focus~.animation {
+		display: block;
+		width: 200px;
+		top: 0;
 		background-color: rgb(74, 74, 74);
 	}
-	nav .start-about, a:nth-child(2):focus~.animation {
-		width: 66px;
-		left: 66px;
+
+	nav .start-about,
+	a:nth-child(2):focus~.animation {
+		display: block;
+		width: 200px;
+		top: 30px;
 		background-color: #e74c3c;
 	}
-	nav .start-blog, a:nth-child(3):focus~.animation {
-		width: 66px;
-		left: 134px;
+
+	nav .start-blog,
+	a:nth-child(3):focus~.animation {
+		display: block;
+		width: 200px;
+		top: 60px;
 		background-color: #3498db;
 	}
 
-	nav .start-blog, a:nth-child(4):focus~.animation {
+	nav .start-blog,
+	a:nth-child(4):focus~.animation {
+		display: block;
 		width: 200px;
-		top: 30px;
+		top: 90px;
 		background-color: #3700ff;
 	}
 }
@@ -211,3 +256,8 @@ h1 {
 	font-family: 'Cherry Swash', cursive;
 }
 
+.topbutton {
+	position: fixed !important;
+	bottom: 100px !important;
+	right: 100px !important;
+}

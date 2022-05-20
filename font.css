@@ -1,0 +1,8 @@
+.article:hover {
+  background-color: rgba(235, 235, 235, 0.788);
+  font-size: 15px;
+  transition: all .3s ease 0s;
+  opacity: 0.9;
+  border-radius: 5px; }
+
+/*# sourceMappingURL=font.css.map */
