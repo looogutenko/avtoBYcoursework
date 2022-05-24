@@ -1,0 +1,681 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+
+    <meta charset="utf-8" />
+    <title>Capstone1</title>
+    <!-- Required meta tags -->
+
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+
+    <style>
+        @media (min-width: 770px) {
+            .up {
+                display: grid;
+                margin: auto;
+                width: 750px;
+                grid-template-columns: repeat(5, 1fr);
+
+                margin: 27px auto 0;
+                position: relative;
+                width: 750px;
+                height: 50px;
+                background-color: rgb(74, 74, 74);
+                border-radius: 8px;
+                font-size:18px;          }
+
+            nav {
+                grid-column: 2/6;
+                display: grid !important;
+                grid-template-columns: repeat(4, 1fr);
+            }
+
+            #logo {
+                grid-column: 1/2;
+            }
+
+            .view {
+                display: grid;
+                width: 750px;
+                margin-top: 10px;
+                margin: auto;
+                grid-template-columns: repeat(3, 1fr);
+                grid-template-rows: repeat(2, 1fr);
+            }
+
+            .sl {
+                grid-column: 1/3;
+                grid-row: 1/1;
+                padding: 10px;
+                padding-left: 0;
+                padding-right: 0;
+                justify-self: first baseline;
+            }
+
+            .short_info {
+                display: grid;
+                padding: 10px;
+                grid-template-columns: 1fr;
+                grid-template-rows: repeat(4, 1fr);
+            }
+
+            .name {
+                font-weight: bold;
+                font-size: 18px;
+                font-family: Roboto, "Helvetica Neue", Helvetica, Arial;
+                text-decoration: underline;
+            }
+
+            .short {
+
+                font-size: 18px;
+                font-family: Roboto, "Helvetica Neue", Helvetica, Arial;
+
+
+            }
+
+            .price {
+                font-size: 18px;
+                font-family: Roboto, "Helvetica Neue", Helvetica, Arial;
+            }
+
+            .btns {
+                display: grid;
+                grid-template-rows: repeat(2, 1fr);
+            }
+
+            .description {
+                display: grid;
+                grid-column: 1/4;
+                background-color: rgb(239, 239, 239);
+                border-radius: 10px;
+                grid-template-columns: 1fr;
+                grid-template-rows: repeat(5, 1fr);
+                padding: 20px;
+            }
+
+            .head {
+                grid-column: 1/3;
+                grid-row: 1/1;
+                font-weight: bold;
+                font-size: 18px;
+                font-family: Roboto, "Helvetica Neue", Helvetica, Arial;
+
+            }
+
+            .text {
+                grid-column: 1/3;
+                grid-row: 2/6;
+                font-family: Roboto, "Helvetica Neue", Helvetica, Arial;
+            }
+
+
+
+
+        }
+
+        @media (min-width: 360px) and (max-width: 768px) {
+
+            .up {
+                display: grid;
+                margin: auto !important;
+                width: 300px !important;
+                grid-template-columns: 1fr;
+                grid-template-rows: 2fr 4fr;
+
+
+                margin: 27px auto 0;
+                position: relative;
+                width: 300px;
+                height: 180px;
+                background-color: rgb(74, 74, 74);
+                border-radius: 8px;
+                font-size:18px;          }
+
+            nav {
+                grid-row: 2/3;
+                grid-column: 1/2;
+                display: grid !important;
+                grid-template-columns: 1fr;
+                grid-template-rows: repeat(4, 1fr);
+            }
+
+            #logo {
+                grid-column: 1/4;
+            }
+
+            .view {
+                display: grid;
+                width: 300px;
+                margin-top: 10px;
+                margin: auto;
+                grid-template-columns: 1fr;
+                grid-template-rows: 200px 250px auto;
+            }
+
+            .sl {
+                grid-row: 2/3;
+                padding: 10px;
+                padding-left: 0;
+                padding-right: 0;
+                justify-self: first baseline;
+            }
+
+            .slider {
+                height: 200px !important;
+            }
+
+            .slider .item img {
+                height: 200px !important;
+            }
+
+            .short_info {
+                display: grid;
+                padding: 10px;
+                grid-row: 1/2;
+                grid-template-columns: 1fr;
+                grid-template-rows: repeat(4, 1fr);
+            }
+
+            .name {
+                font-weight: bold;
+                font-size: 18px;
+                font-family: Roboto, "Helvetica Neue", Helvetica, Arial;
+                text-decoration: underline;
+            }
+
+            .short {
+
+                font-size: 18px;
+                font-family: Roboto, "Helvetica Neue", Helvetica, Arial;
+
+
+            }
+
+            .price {
+                font-size: 18px;
+                font-family: Roboto, "Helvetica Neue", Helvetica, Arial;
+            }
+
+            .btns {
+                display: grid;
+                grid-template-rows: repeat(2, 1fr);
+                grid-row-gap: 5px;
+            }
+
+            .description {
+                display: grid;
+                grid-row: 3/4;
+                background-color: rgb(239, 239, 239);
+                border-radius: 10px;
+                grid-template-columns: 1fr;
+                grid-template-rows: repeat(5, 1fr);
+                padding: 20px;
+            }
+
+            .head {
+                grid-column: 1/3;
+                grid-row: 1/1;
+                font-weight: bold;
+                font-size: 18px;
+                font-family: Roboto, "Helvetica Neue", Helvetica, Arial;
+
+            }
+
+            .text {
+                grid-column: 1/3;
+                grid-row: 2/6;
+                font-family: Roboto, "Helvetica Neue", Helvetica, Arial;
+            }
+
+        }
+
+        @media (min-width: 240px) and (max-width: 359px) {
+
+            body {
+                font-size: 18px;
+            }
+
+            .up {
+                display: grid;
+                margin: auto !important;
+                width: 200px !important;
+                grid-template-columns: 1fr;
+                grid-template-rows: 2fr 4fr;
+
+
+                margin: 27px auto 0;
+                position: relative;
+                width: 200px;
+                height: 180px;
+                background-color: rgb(74, 74, 74);
+                border-radius: 8px;
+                font-size:18px;          }
+
+            nav {
+                grid-row: 2/3;
+                grid-column: 1/2;
+                display: grid !important;
+                grid-template-columns: 1fr;
+                grid-template-rows: repeat(4, 1fr);
+            }
+
+            #logo {
+                grid-column: 1/4;
+            }
+
+            .view {
+                display: grid;
+                width: 200px;
+                margin-top: 10px;
+                margin: auto;
+                grid-template-columns: 1fr;
+                grid-template-rows: 200px 250px auto;
+            }
+
+            .sl {
+                grid-row: 2/3;
+                padding: 10px;
+                padding-left: 0;
+                padding-right: 0;
+                justify-self: first baseline;
+            }
+
+            .slider {
+                height: 200px !important;
+            }
+
+            .slider .item img {
+                height: 200px !important;
+            }
+
+            .short_info {
+                display: grid;
+                padding: 10px;
+                grid-row: 1/2;
+                grid-template-columns: 1fr;
+                grid-template-rows: repeat(4, 1fr);
+            }
+
+            .name {
+                font-weight: bold;
+                font-size: 18px;
+                font-family: Roboto, "Helvetica Neue", Helvetica, Arial;
+                text-decoration: underline;
+            }
+
+            .short {
+
+                font-size: 18px;
+                font-family: Roboto, "Helvetica Neue", Helvetica, Arial;
+
+
+            }
+
+            .price {
+                font-size: 18px;
+                font-family: Roboto, "Helvetica Neue", Helvetica, Arial;
+            }
+
+            .btns {
+                display: grid;
+                grid-template-rows: repeat(2, 1fr);
+                grid-row-gap: 5px;
+            }
+
+            .description {
+                display: grid;
+                grid-row: 3/4;
+                background-color: rgb(239, 239, 239);
+                border-radius: 10px;
+                grid-template-columns: 1fr;
+                grid-template-rows: repeat(5, 1fr);
+                padding: 20px;
+            }
+
+            .head {
+                grid-column: 1/3;
+                grid-row: 1/1;
+                font-weight: bold;
+                font-size: 18px;
+                font-family: Roboto, "Helvetica Neue", Helvetica, Arial;
+
+            }
+
+            .text {
+                grid-column: 1/3;
+                grid-row: 2/6;
+                font-family: Roboto, "Helvetica Neue", Helvetica, Arial;
+            }
+
+        }
+
+        html {
+            position: relative;
+            min-height: 100%;
+        }
+
+        body {
+            margin-bottom: 60px;
+        }
+
+        .btn1 {
+            background-color: rgb(69, 69, 69);
+            border: none;
+            border-radius: 5px;
+            color: white;
+            height: 30px;
+            align-self: end;
+        }
+
+        .btn2 {
+            background-color: rgb(39, 39, 39);
+            border: none;
+            border-radius: 5px;
+            color: white;
+            height: 30px;
+            align-self: end;
+        }
+
+        .btn1:hover,
+        .btn2:hover {
+            background-color: black;
+        }
+
+        .btn1:active,
+        .btn1:active {
+            background-color: rgb(115, 0, 255);
+            transition: all .3s ease 0s;
+            border: none;
+            border-radius: 5px;
+            color: white;
+        }
+
+        #logo {
+            display: grid;
+            grid-template-columns: 1fr repeat(2, 1fr);
+            padding: 10px !important;
+            grid-column-gap: 10px;
+        }
+
+        .logo {
+            grid-column: 1/2;
+            width: 40px;
+            height: auto;
+            justify-self: end;
+        }
+
+        .logo_text {
+            grid-column: 2/4;
+            width: auto;
+            height: 30px;
+            justify-self: start;
+            align-self: center;
+        }
+    </style>
+
+
+    <link rel="stylesheet" href="./styles/menu.css" />
+    <link rel="stylesheet" href="./styles/view.css" />
+    <link rel="stylesheet" href="./styles/slider.css" />
+    <link rel="stylesheet" href="./styles/arrow.css" />
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+
+</head>
+
+<body>
+    <header>
+        <div class="up">
+            <div id="logo">
+                <object type="image/svg+xml" data="./images/Фигура 4_20220511_14253.svg" class="logo">
+                    Your browser does not support SVG
+                </object>
+                <object type="image/svg+xml" data="./images/Фигура 6_20220511_155252.svg" class="logo_text">
+                    Your browser does not support SVG
+                </object>
+            </div>
+            <nav>
+                <a style="color:rgba(210, 210, 210, 0.788)" href="./index.html">Главная</a>
+                <a href="./news.html">Новости</a>
+                <a href="./help.html">Помощь</a>
+                <a href="./ad_add.html" id="add_ad">+ Объявление</a>
+                <div class="animation start-home"></div>
+            </nav>
+        </div>
+        <a href="#" title="Вернуться к началу" class="topbutton">
+            <div class="arrow"></div>
+        </a>
+    </header>
+
+    <main>
+        <div class="view">
+            <div class="sl">
+                <div class="slider">
+                    <div class="item">
+                        <img src="./photo_car_jpg/v1.jpg" alt="Первый слайд">
+
+                    </div>
+
+                    <div class="item">
+                        <img src="./photo_car_jpg/v2.jpg" alt="Второй слайд">
+
+                    </div>
+
+                    <div class="item">
+                        <img src="./photo_car_jpg/v3.jpg" alt="Третий слайд">
+
+                    </div>
+
+                    <a class="prev" onclick="minusSlide()">&#10094;</a>
+                    <a class="next" onclick="plusSlide()">&#10095;</a>
+                </div>
+
+                <div class="slider-dots">
+                    <span class="slider-dots_item" onclick="currentSlide(1)"></span>
+                    <span class="slider-dots_item" onclick="currentSlide(2)"></span>
+                    <span class="slider-dots_item" onclick="currentSlide(3)"></span>
+                </div>
+                <script type="text/javascript" src="./scripts/slider.js"></script>
+            </div>
+
+            <div class="short_info">
+                <div class="name">Volvo S40</div>
+                <div class="short">2.0, Бензин, 2020, Автоматическая, 12 630 км</div>
+                <div class="price">1000 $</div>
+                <div class="btns">
+                    <div class="dropdown">
+                        <button onclick="myFunction()" class="dropbtn">
+                            Написать продавцу
+                            <object type="image/svg+xml" data="./images/arrow_white.svg" class="arrow">
+                            </object>
+                        </button>
+                        <div id="myDropdown1" class="dropdown-content">
+                            info@example.com
+                        </div>
+                    </div>
+                    <div class="dropdown">
+                        <button onclick="myFunction()" class="dropbtn">
+                            Показать телефон
+                            <object type="image/svg+xml" data="./images/arrow_white.svg" class="arrow">
+                            </object>
+                        </button>
+                        <div id="myDropdown1" class="dropdown-content">
+                            + 375 234 567 88
+                        </div>
+                        <script>
+                            /* When the user clicks on the button, 
+                            toggle between hiding and showing the dropdown content */
+                            function myFunction() {
+                                document.getElementById("myDropdown").classList.toggle("show");
+                            }
+
+                            // Close the dropdown if the user clicks outside of it
+                            window.onclick = function (event) {
+                                if (!event.target.matches('.dropbtn')) {
+
+                                    var dropdowns = document.getElementsByClassName("dropdown-content");
+                                    var i;
+                                    for (i = 0; i < dropdowns.length; i++) {
+                                        var openDropdown = dropdowns[i];
+                                        if (openDropdown.classList.contains('show')) {
+                                            openDropdown.classList.remove('show');
+                                        }
+                                    }
+                                }
+                            }
+                        </script>
+                    </div>
+                </div>
+            </div>
+
+            <div class="description">
+                <div class="head">Описание</div>
+                <div class="text">Автомобиль в отличном состоянии, полностью обслужен. Установлен полный внешний
+                    рестайлинг
+
+                    в обвесе Dynamic Black Edition с максимальной Full Led оптикой (не путать с ксеноном). Данные
+                    доработки делались для себя. Автомобиль без ДТП. Вид имеет. Кованые диски R20 (данный стиль дисков
+                    кованый, а не литой).
+
+                    Панорамная крыша, парктроник с камерой, круиз, климат, электробагажник, электрозеркала, подогрев
+                    сидений/руля/лобового стекла, акустика Meridian,
+
+                    Два комплекта ковриков, два ключа, сервисные документы.</div>
+
+            </div>
+
+        </div>
+
+
+
+    </main>
+
+    <footer class="text-center text-lg-start bg-light text-muted">
+        <!-- Section: Social media -->
+        <section class="d-flex justify-content-center justify-content-lg-between p-4 border-bottom">
+          <!-- Left -->
+          <div class="me-5 d-none d-lg-block">
+            <span>Свяжитесь с нами в социальных сетях</span>
+          </div>
+          <!-- Left -->
+    
+          <!-- Right -->
+          <div>
+            <a href="" class="me-4 text-reset">
+              <i class="fab fa-facebook-f"></i>
+            </a>
+            <a href="" class="me-4 text-reset">
+              <i class="fab fa-twitter"></i>
+            </a>
+            <a href="" class="me-4 text-reset">
+              <i class="fab fa-google"></i>
+            </a>
+            <a href="" class="me-4 text-reset">
+              <i class="fab fa-instagram"></i>
+            </a>
+            <a href="" class="me-4 text-reset">
+              <i class="fab fa-linkedin"></i>
+            </a>
+            <a href="" class="me-4 text-reset">
+              <i class="fab fa-github"></i>
+            </a>
+          </div>
+          <!-- Right -->
+        </section>
+        <!-- Section: Social media -->
+    
+        <!-- Section: Links  -->
+        <section class="">
+          <div class="container text-center text-md-start mt-5">
+            <!-- Grid row -->
+            <div class="row mt-3">
+              <!-- Grid column -->
+              <div class="col-md-3 col-lg-4 col-xl-3 mx-auto mb-4">
+                <!-- Content -->
+                <h6 class="text-uppercase fw-bold mb-4">
+                  <i class="fas fa-gem me-3"></i>Avto.by
+                </h6>
+                <p>
+                  Наша цель — помочь пользователям в продаже, покупке и обслуживании автомобиля, предоставив для этого всю
+                  необходимую информацию и сервисы.
+                </p>
+              </div>
+              <!-- Grid column -->
+    
+              <!-- Grid column -->
+              <div class="col-md-2 col-lg-2 col-xl-2 mx-auto mb-4">
+                <!-- Links -->
+                <h6 class="text-uppercase fw-bold mb-4">
+                  Сервисы
+                </h6>
+                <p>
+                  <a href="#!" class="text-reset">Оценка стоимости</a>
+                </p>
+                <p>
+                  <a href="#!" class="text-reset">Финансы</a>
+                </p>
+                <p>
+                  <a href="#!" class="text-reset">Знания</a>
+                </p>
+                <p>
+                  <a href="#!" class="text-reset">Каталог компаний</a>
+                </p>
+              </div>
+              <!-- Grid column -->
+    
+              <!-- Grid column -->
+              <div class="col-md-3 col-lg-2 col-xl-2 mx-auto mb-4">
+                <!-- Links -->
+                <h6 class="text-uppercase fw-bold mb-4">
+                  Социальные сети
+                </h6>
+                <p>
+                  <a href="#!" class="text-reset">Youtube</a>
+                </p>
+                <p>
+                  <a href="#!" class="text-reset">Instagram</a>
+                </p>
+                <p>
+                  <a href="#!" class="text-reset">Telegram</a>
+                </p>
+                <p>
+                  <a href="#!" class="text-reset">Facebook</a>
+                </p>
+              </div>
+              <!-- Grid column -->
+    
+              <!-- Grid column -->
+              <div class="col-md-4 col-lg-3 col-xl-3 mx-auto mb-md-0 mb-4">
+                <!-- Links -->
+                <h6 class="text-uppercase fw-bold mb-4">
+                  Contact
+                </h6>
+                <p><i class="fas fa-home me-3"></i> Minsk, NY 10012, BY</p>
+                <p>
+                  <i class="fas fa-envelope me-3"></i>
+                  info@example.com
+                </p>
+                <p><i class="fas fa-phone me-3"></i> + 375 234 567 88</p>
+                <p><i class="fas fa-print me-3"></i> + 375 234 567 89</p>
+              </div>
+              <!-- Grid column -->
+            </div>
+            <!-- Grid row -->
+          </div>
+        </section>
+        <!-- Section: Links  -->
+    
+        <!-- Copyright -->
+        <div class="text-center p-4" style="background-color: rgba(0, 0, 0, 0.05);">
+          © 2021 Copyright:
+          <a class="text-reset fw-bold" href="https://mdbootstrap.com/">Avto.by</a>
+        </div>
+        <!-- Copyright -->
+      </footer>
+
+
+</body>
+
+</html>
